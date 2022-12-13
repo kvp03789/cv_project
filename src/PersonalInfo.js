@@ -8,11 +8,12 @@ class PersonalInfo extends React.Component {
 
   render(){
       return(
-          <div>
-            <Text default="First Name"/>
-            <Text default="Last Name"/>
-            <Text default="Email"/>
-            <Text default="Phone Number"/>
+          <div className="form-section">
+            <h3>Personal Information</h3>
+            <Text default="First Name" type="text"/>
+            <Text default="Last Name" type="text"/>
+            <Text default="Email" type="email"/>
+            <Text default="Phone Number" type="number"/>
           </div>
       )    
     }

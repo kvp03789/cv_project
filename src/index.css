@@ -7,3 +7,36 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+}
+
+.form-section {
+  background-color:rgba(86, 86, 86, 0.289);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+  border-bottom: 2px solid grey
+}
+
+.list-item{
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-top: 2px solid black
+}
+
+.list-field{
+  display: flex;
+}

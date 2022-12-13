@@ -12,21 +12,24 @@ class Text extends React.Component {
     this.handleEdit=this.handleEdit.bind(this);
     this.handleChange=this.handleChange.bind(this);
     this.handleSave=this.handleSave.bind(this);
+    this.tempVal=this.props.default;
+    
   }
 
   handleEdit(){
     this.setState({edit: true})
-    console.log(this.state)
   }
 
   handleChange(e){
     this.tempVal = e.target.value
-    console.log(this.tempVal)
   }
 
   handleSave(){
-    this.setState({edit: false, value: this.tempVal})
-    //console.log(this.state)
+    if(this.tempVal === this.props.default){
+      this.setState({edit: false, value: this.tempVal})
+    }else{
+      this.setState({edit: false, value: this.tempVal})
+    }
   }
 
   componentDidUpdate(){
@@ -36,8 +39,8 @@ class Text extends React.Component {
   render(){
     if(!this.state.edit){
       return(
-        <div>
-            <p>{this.state.value}</p>
+        <div className="input-container">
+            <p className="personal-info-paragraph">{this.state.value}</p>
             <button onClick={this.handleEdit}>
               Edit
             </button>
@@ -45,8 +48,8 @@ class Text extends React.Component {
       ) 
     } else {
       return(
-        <div>
-            <input className="personal-info-text-input" onChange={(e) => {this.handleChange(e)}} placeholder={this.edit===false?this.props.default:this.state.value}>
+        <div className="input-container">
+            <input type={this.props.type} className="personal-info-text-input" onChange={(e) => {this.handleChange(e)}} placeholder={this.edit===false?this.props.default:this.state.value}>
             </input>
             <button onClick={this.handleSave}>
               Save
