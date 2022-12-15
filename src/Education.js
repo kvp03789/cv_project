@@ -28,7 +28,7 @@ class Education extends React.Component {
     this.setState({
       list: [...this.state.list, newObj],
       displayForm: false,
-      counter: this.counter++,
+      counter: this.state.list.length - 1
     })
   }
 
